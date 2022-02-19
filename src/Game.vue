@@ -147,6 +147,10 @@ function showMessage(msg: string, time = 1000) {
   }
 }
 
+function dismissMessage() {
+  message = ''
+}
+
 function shake() {
   shakeRowIndex = currentRowIndex
   setTimeout(() => {
@@ -173,7 +177,7 @@ function genResultGrid() {
 
 <template>
   <Transition>
-    <div class="message" v-if="message">
+    <div class="message" v-if="message" @click="dismissMessage">
       {{ message }}
       <pre v-if="grid">{{ grid }}</pre>
     </div>
