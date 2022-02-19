@@ -12,7 +12,7 @@ const board = $ref(
   Array.from({ length: 6 }, () =>
     Array.from({ length: 5 }, () => ({
       letter: '',
-      state: LetterState.INITIAL
+      state: LetterState.INITIAL,
     }))
   )
 )
@@ -158,7 +158,7 @@ const icons = {
   [LetterState.CORRECT]: '🟩',
   [LetterState.PRESENT]: '🟨',
   [LetterState.ABSENT]: '⬜',
-  [LetterState.INITIAL]: null
+  [LetterState.INITIAL]: null,
 }
 
 function genResultGrid() {
@@ -179,7 +179,7 @@ function genResultGrid() {
     </div>
   </Transition>
   <header>
-    <h1>VVORDLE</h1>
+    <h1>JOGUINHO DUSGU</h1>
     <a
       id="source-link"
       href="https://github.com/machadomatt/joguinho-dusgu"
@@ -193,7 +193,7 @@ function genResultGrid() {
       :class="[
         'row',
         shakeRowIndex === index && 'shake',
-        success && currentRowIndex === index && 'jump'
+        success && currentRowIndex === index && 'jump',
       ]"
     >
       <div
@@ -207,7 +207,7 @@ function genResultGrid() {
           :class="['back', tile.state]"
           :style="{
             transitionDelay: `${index * 300}ms`,
-            animationDelay: `${index * 100}ms`
+            animationDelay: `${index * 100}ms`,
           }"
         >
           {{ tile.letter }}
@@ -283,7 +283,8 @@ function genResultGrid() {
   border: 2px solid #d3d6da;
 }
 .tile.filled .front {
-  border-color: #999;
+  border-color: #3e9197;
+  color: #fff;
 }
 .tile .back {
   transform: rotateX(180deg);
