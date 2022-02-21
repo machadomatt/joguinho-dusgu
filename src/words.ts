@@ -5674,6 +5674,7 @@ const allowedGuesses = [
   'varro',
   'varre',
   'varao',
+  'vasco',
   'vasos',
   'vasta',
   'vasto',
