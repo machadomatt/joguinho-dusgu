@@ -3,6 +3,7 @@ import { onUnmounted } from 'vue'
 import { getWordOfTheDay, allWords } from './words'
 import Keyboard from './Keyboard.vue'
 import { LetterState } from './types'
+import Challenge from './Challenge.vue'
 
 // Get word of the day
 const answer = getWordOfTheDay()
@@ -173,6 +174,14 @@ function genResultGrid() {
     })
     .join('\n')
 }
+
+const challengeFocused = () => {
+  allowInput = false
+}
+
+const challengeBlured = () => {
+  allowInput = true
+}
 </script>
 
 <template>
@@ -220,6 +229,7 @@ function genResultGrid() {
     </div>
   </div>
   <Keyboard @key="onKey" :letter-states="letterStates" />
+  <Challenge @focus="challengeFocused" @blur="challengeBlured" />
 </template>
 
 <style scoped>
